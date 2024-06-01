@@ -18,19 +18,44 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Terry Liu
+title: TODO
 email: terry.liu.y@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal website for collecting thoughts and past work
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://terryliu.com" # the base hostname & protocol for your site, e.g. http://example.com
-# twitter_username: jekyllrb
-github_username:  sudotliu
 
 # Build settings
-theme: minima
+remote_theme: "mmistakes/minimal-mistakes@4.26.1"
 plugins:
   - jekyll-feed
+  - jekyll-include-cache
+
+author:
+  name: "Terry Liu"
+  avatar: "/assets/images/bio-photo.jpeg"
+  bio: "I come here to think in 1s and 0s"
+  location: "SF Bay Area"
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/sudotliu"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/sudotliu"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      # comments: true
+      # share: true
+      # related: true
 
 # Exclude from processing.
 # The following items will not be processed, by default.
