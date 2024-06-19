@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: TODO
+title: terryliu.com
 email: terry.liu.y@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   A personal website for collecting thoughts and past work
@@ -43,6 +43,9 @@ author:
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/sudotliu"
+    - label: "Résumé"
+      icon: "fab fa-fw fa-file"
+      url: "/assets/files/resume.pdf"
 
 defaults:
   # _posts
