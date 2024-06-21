@@ -2,7 +2,7 @@
 layout: single
 title:  "Hello, World!"
 date:   2024-06-18 09:30:00 -0700
-categories: jekyll update
+categories: blog
 ---
 Welcome to my blog that will mostly be focused on code.
 
