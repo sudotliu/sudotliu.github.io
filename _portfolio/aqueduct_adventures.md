@@ -1,6 +1,6 @@
 ---
-title: "2013: Aqueduct Adventures Mobile Game"
-excerpt: "Mobile game produced for a university class project."
+title: "Aqueduct Adventures"
+excerpt: "(2013) Mobile game produced for a university computer science class project."
 classes: wide
 header:
   teaser: /assets/images/cs470/gameplay_screen.png
@@ -9,6 +9,8 @@ sidebar:
     image: /assets/images/cs470/cpp_triangle.png
     image_alt: "game home screen"
     text: "Computer Science class project"
+  - title: "Time Period"
+    text: "2013"
 gallery:
   - url: /assets/images/cs470/home_screen.png
     image_path: assets/images/cs470/home_screen.png
