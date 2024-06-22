@@ -27,6 +27,7 @@ url: "https://terryliu.com" # the base hostname & protocol for your site, e.g. h
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.26.1"
+# minimal_mistakes_skin: "contrast"
 plugins:
   - jekyll-feed
   - jekyll-include-cache
@@ -37,14 +38,17 @@ author:
   bio: "I come here to think in 1s and 0s"
   location: "SF Bay Area"
   links:
+    - label: "Email"
+      icon: "far fa-fw fa-envelope"
+      url: "mailto:terry.liu.y@gmail.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/sudotliu"
     - label: "LinkedIn"
       icon: "fab fa-fw fa-linkedin"
       url: "https://www.linkedin.com/in/sudotliu"
-    - label: "Résumé"
-      icon: "fab fa-fw fa-file"
+    - label: "Resume"
+      icon: "far fa-fw fa-file-lines"
       url: "/assets/files/resume.pdf"
 
 defaults:
@@ -66,7 +70,7 @@ defaults:
     values:
       layout: single
       author_profile: false
-      share: true
+      # share: true
   # _pages
   - scope:
       path: ""
