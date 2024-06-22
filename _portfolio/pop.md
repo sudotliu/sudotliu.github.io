@@ -32,13 +32,18 @@ gallery:
     alt: "iOS App Store promo screen 6"
 ---
 
-An old friend and I embarked on our first startup journey back in 2015 and I am convinced to this
-day that it had a tremendous impact on my trajectory as an engineer.
+Back in 2015, an old friend and I embarked on our first startup journey and I am convinced to this
+day that it had a tremendous impact on my trajectory as an engineer. Back then I was still finding
+my way deeper into backend work, I still had learning jQuery on my to-do list, and React had just been released not too long ago.
 
-At the time I was still at my first job, finding my way deep into backend projects during the day.
+The idea was to build a social network that focused on polls as the primary 
+At the time I was still at my first job, finding my way deep into backend
 
-{% include gallery caption="Screenshots from actual game demo run on Android emulator." %}
+{% include gallery caption="iOS App Store preview screens for POP" %}
 
 TODO
 
-[![Gameplay screenshot](/assets/images/pop/gameplay_screen.png)](/assets/images/pop/gameplay_screen.png)
+[![Gameplay
+screenshot](/assets/images/pop/gameplay_screen.png)](/assets/images/pop/gameplay_screen.png)
+
+![POP App demo](/assets/images/pop/demo.gif)
