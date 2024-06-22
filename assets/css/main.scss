@@ -11,22 +11,4 @@ search: false
 // Import partial overrides
 @import "syntax";
 @import "code";
-// @import "variables";
-
-// Custom CSS
-html {
-  font-size: 16px;
-
-  @include breakpoint($medium) {
-    font-size: 18px;
-  }
-
-  @include breakpoint($large) {
-    font-size: 20px;
-  }
-
-  @include breakpoint($x-large) {
-    font-size: 20px;
-  }
-}
-
+@import "font";

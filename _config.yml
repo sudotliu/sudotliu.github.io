@@ -35,7 +35,7 @@ plugins:
 author:
   name: "Terry Liu"
   avatar: "/assets/images/bio-photo.jpeg"
-  bio: "I come here to think in 1s and 0s"
+  bio: "Musings on 1s and 0s"
   location: "SF Bay Area"
   links:
     - label: "Email"
@@ -50,6 +50,8 @@ author:
     - label: "Resume"
       icon: "far fa-fw fa-file-lines"
       url: "/assets/files/resume.pdf"
+
+logo: "/assets/images/ico/android-chrome-384x384.png"
 
 defaults:
   # _posts
@@ -70,6 +72,7 @@ defaults:
     values:
       layout: single
       author_profile: false
+      read_time: true
       # share: true
   # _pages
   - scope:
@@ -82,7 +85,7 @@ defaults:
 collections:
   portfolio:
     output: true
-    permalink: /:collection/:path/
+    permalink: /:collection/:path
 
 include:
   - _pages
