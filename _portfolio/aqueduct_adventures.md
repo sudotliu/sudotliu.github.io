@@ -1,5 +1,6 @@
 ---
 title: "Aqueduct Adventures"
+order: 1
 excerpt: "(2013) Mobile game produced for a university computer science class project."
 classes: wide
 header:
@@ -32,9 +33,9 @@ a product end-to-end.
 
 Aside from the constraints of the technology to develop on (Corona SDK, Box2D, Lua) and what the
 game's underlying theme should be about (the LA Aqueduct), we were given full autonomy. We had to
-come up with the game concept, the designs, gameplay mechanics, graphics, audio, code, etc. Over the
+come up with the game concept, designs, gameplay mechanics, graphics, audio, code, etc. Over the
 span of a single quarter (10 weeks), my team and I collectively spent hundreds of hours outside of
-class to build a fully functional game prototype for the Android platform using technology that was
+class to build a fully functional prototype for the Android platform using technology that was
 completely new to us.
 
 The object of our puzzle-type game was simple: manage the flow of water and retain as much as
@@ -51,9 +52,9 @@ One of our first challenges was determining how to simulate water flow, a slippe
 intended). We decided to use many small "particles" of water that would flow from a starting
 reservoir tank to an ending one, and early testing gave us confidence that the effect was convincing
 enough. However, when we increased the amount of water in the first level of the game, it became
-apparent that the game was extremely computationally expensive. Every time we loaded the level, all
+apparent that things were extremely computationally expensive. Every time we loaded the level, all
 the water "particles" in the starting reservoir would bounce against each other and cause a rippling
-effect of interactions that quickly compounded and slowed the game performance to an unresponsive
+effect of interactions that quickly compounded and slowed performance to an unresponsive
 crawl. Things would improve as the water spread out while progressing through the level, but the
 same issue occurred again at the end of the level when the water accumulated in the ending
 reservoir.
@@ -62,20 +63,19 @@ We brainstormed and researched some clever but overly sophisticated ways of maki
 an amorphous "blob" with fewer particles to reduce interactions, but there was no clear path to
 implementation, and we were pressed for time. Eventually, I realized that our product was a game,
 not a real-life simulation. We could simply generate the water particles on-the-fly from the
-starting valve and have them disappear from the game engine as soon as they reached the end
-reservoir. This change felt no different to the player, as the perception of what was happening
-remained virtually the same, and yet it drastically reduced the number of water "particle"
-interactions, allowing our game to run incredibly smoothly. That major breakthrough actually helped
-in a number of other ways as well; for one thing, it sped up the testing process since the app would
-no longer stall or freeze but it also simplified the logic for state management and win condition
-tracking as well. 
+starting valve and have them disappear from the game environment as soon as they reached the end
+reservoir. This felt no different to the player, as the perception of what was happening remained
+virtually the same, and yet it drastically reduced the number of water "particle" interactions,
+allowing our game to run incredibly smoothly. This major breakthrough actually helped in a number of
+other ways as well; it sped up the testing process since the app would no longer stall in
+performance but it also simplified state management and win condition logic. 
 
 [![Gameplay screenshot](/assets/images/cs470/gameplay_screen.png)](/assets/images/cs470/gameplay_screen.png)
 
 The second breakthrough came as we got into more advanced level design. To increase the level of
-challenge and make use of more screen real estate for the game, we had to introduce turns in the
-water pipes. Up to that point we had only experimented with straight lines as physical boundaries
-for the water to travel along and that was as simple as drawing a line with some coordinates:
+challenge and make use of more screen real estate, we had to introduce turns in the water pipes. Up
+to that point we had only experimented with straight lines as physical boundaries for the water to
+travel along and that was as simple as drawing a line with some coordinates:
 ```lua
 function PhysicsLineFactoryII:makePhysicsLine(x0,y0,x1,y1,tag)
 ```
@@ -115,28 +115,28 @@ function PhysicsLineFactoryII:makeEastTPipe(x,y,w,h,tag)
   ...
 ```
 
-The real challenge was in figuring out how to draw the semi-circles and quarter-circles needed for
-turns in the pipe. The first solution we reached for was a library package that could draw arcs but
-it gave very limited control over the exact shape and orientation of the arc. It was only able to
-draw simple elliptical arcs connecting two points and this caused numerous issues in the game
-environment. Not only did it take excessive time to position the arcs, their poor fitment meant that
-they would often either leave gaps so that water particles would leak out of the pipe system or they
-would stick out at the attachment junctures and impede the flow of water unintentionally.
+The real challenge was in figuring out how to draw the curves needed for turns in the pipe. The
+first solution we tried was a library package that could draw arcs but it gave very limited control
+over the exact shape and orientation. It was only able to draw simple elliptical arcs connecting two
+points and this caused numerous issues in the game environment. Not only did it take excessive time
+to position the arcs, their poor fitment meant that they would often either leave gaps so that water
+particles would leak out of the pipe system or they would protrude at attachment junctures and
+impede the flow of water unintentionally.
 
 We needed a way to maintain a constant pipe width through the turn while also leaving it easy to
-adjust the turn radius, pipe girth, and position of the turn. It also had to connect seamlessly with
+configure the turn radius, pipe girth, and pipe placement. It also had to connect seamlessly with
 other pipe segments so that no unwanted leaks or blockages would be introduced. I distinctly
 remember whiteboarding late into the night in my room to solve our digital plumbing issue. The key
-insight that led to the solution was realizing that two straight lines forming a `\/` shape is kind
-of just a *really* badly drawn semi-circle. Three straight lines, `|_|`, is better but still bad.
-Extending this principle with just a few more drawings using even more line segments, I was soon
-convinced that a reasonably smooth semi-circle was feasible with enough line segments.
+insight was realizing that two straight lines forming a `\/` shape is kind of just a *really* badly
+drawn semi-circle. Three straight lines, `|_|`, is better but still bad. Extending this principle
+with a few more drawings using even more line segments, I was soon convinced that a reasonably
+smooth semi-circle was feasible if enough line segments were used.
 
 I spent the remainder of that evening using geometry to derive the algorithm that would allow us to
-much more easily implement our pipe turns. I tested various counts of line segments up to 12 but
-realized that the difference was not really discernable beyond 8 segments. Once I had the ability to
-make any quarter-circle turn of pipe I needed, I realized that any semi-circle turn would really
-just be two quarter turns put together and the rest became as easy as pie (no pun intended).
+much more easily implement our precise pipe turns. I tested various counts of line segments up to 12
+but realized that the difference was not really discernable beyond 8 segments. Once I had the
+ability to make any quarter-circle turn, any semi-circle turn could be formed by combining two
+quarter turns and the rest was as easy as pie (no pun intended).
 
 Looking back now, this code could almost certainly have been further refactored, less hard-coded,
 etc. but we knew we weren't going to revisit this logic much at all once it was working so we moved

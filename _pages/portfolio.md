@@ -5,6 +5,8 @@ permalink: /portfolio/
 collection: portfolio
 entries_layout: grid
 classes: wide
+sort_by: order
+sort_order: reverse
 ---
 
 Here is a collection of some of the most interesting bits of work from my past projects. Of course,
