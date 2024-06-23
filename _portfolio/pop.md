@@ -1,7 +1,7 @@
 ---
 title: "Popular Opinion Polling (POP)"
 order: 2
-excerpt: "(2015-2019) Side venture startup with a mission to socialize polls as a way for people to learn more about their friends and popular opinion"
+excerpt: "[2015-2019] Side venture startup with a mission to socialize polls as a way for people to learn more about their friends and popular opinion"
 classes: wide
 header:
   teaser: /assets/images/pop/logo.png

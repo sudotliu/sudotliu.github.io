@@ -1,7 +1,7 @@
 ---
 title: "Aqueduct Adventures"
 order: 1
-excerpt: "(2013) Mobile game produced for a university computer science class project."
+excerpt: "[2013] Mobile game produced for a university computer science class project."
 classes: wide
 header:
   teaser: /assets/images/cs470/gameplay_screen.png
