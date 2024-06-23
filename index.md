@@ -11,7 +11,7 @@ header:
 
 Welcome to my blog that will mostly be focused on technology, especially code.
 
-I am a simple guy (he/him/his) with deep fondness for technology. I've always been driven by a
+I am a simple guy with deep fondness for technology. I've always been driven by a
 desire to discover how things work, and that inquisitive nature will probably never be fully
 satisfied. It took me some time to find my niche among the various fields and career paths that
 piqued my interest, and although I started as a mechanical engineering major, I didn't find true

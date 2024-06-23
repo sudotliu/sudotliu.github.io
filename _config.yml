@@ -18,10 +18,11 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: terryliu.com
+title: terryLiu.com
+subtitle: "musings on 1s and 0s"
 email: terry.liu.y@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  A personal website for collecting thoughts and past work
+  A personal site for collecting my thoughts and past work on tech
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://terryliu.com" # the base hostname & protocol for your site, e.g. http://example.com
 
@@ -34,7 +35,8 @@ plugins:
 author:
   name: "Terry Liu"
   avatar: "/assets/images/bio.jpeg"
-  bio: "Musings on 1s and 0s"
+  bio: |-
+    he \| him \| his
   location: "SF Bay Area"
   links:
     - label: "Email"

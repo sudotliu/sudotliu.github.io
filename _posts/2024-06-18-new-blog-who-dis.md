@@ -20,12 +20,15 @@ It feels appropriate to dedicate this first post to the key technologies enablin
 - Your favorite domain registrar (optional)
 
 It's worth noting that this setup is not exactly user-friendly, especially for anyone new to tech,
-but it can also be run for free (minus the cost of custom domain) if you're okay with having its
+but it can also be hosted for free (minus the cost of custom domain) if you're okay with having its
 contents be publicly accessible on GitHub. You can also pay a GitHub subscription to enable
 privatizing the contents.
 
-If you're strictly looking to blog with a well-supported, feature-full editor, I can't really
-recommend this route, but if you're curious about tech at all and want to have your own (static)
-website for whatever purpose, it's never too late to learn!
+If you're strictly looking to blog with a low-maintenance, well-supported, feature-full editor, I
+can't really recommend this route given the number of other great specialized services for that
+purpose.
+
+However, if you're curious about tech at all and just want to have your own (static)
+website for whatever reason, it's never too late to learn!
 
 Until next time, happy hacking!
