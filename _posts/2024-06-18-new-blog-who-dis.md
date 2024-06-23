@@ -19,10 +19,10 @@ It feels appropriate to dedicate this first post to the key technologies enablin
 - HTML, CSS, JS (of course!)
 - Your favorite domain registrar (optional)
 
-It's worth noting that this setup is not exactly user-friendly, especially for anyone new to tech but
-it can also be run for free (minus the cost of custom domain) as long as you're okay with having its
-contents be publicly accessible on GitHub. You can also pay a GitHub subscription to enable privatizing
-the contents as well.
+It's worth noting that this setup is not exactly user-friendly, especially for anyone new to tech,
+but it can also be run for free (minus the cost of custom domain) if you're okay with having its
+contents be publicly accessible on GitHub. You can also pay a GitHub subscription to enable
+privatizing the contents.
 
 If you're strictly looking to blog with a well-supported, feature-full editor, I can't really
 recommend this route, but if you're curious about tech at all and want to have your own (static)
