@@ -9,7 +9,7 @@ sidebar:
     image: /assets/images/cs470/cpp_triangle.png
     image_alt: "game home screen"
     text: "Computer Science class project"
-  - title: "Time Period"
+  - title: "Period"
     text: "2013"
 gallery:
   - url: /assets/images/cs470/home_screen.png
