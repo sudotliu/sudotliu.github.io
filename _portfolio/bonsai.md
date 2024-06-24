@@ -23,5 +23,6 @@ WIP
     - open source code - pending response from UNC re: license
         - update README based on response
     - create TS version and create open source org tree app?
+      - better yet, create something with algo embedded that allows open specification of what the React node looks like
 
 [![Bonsai metric tree screenshot](/assets/images/bonsai/ex_tree.png)](/assets/images/bonsai/ex_tree.png)
