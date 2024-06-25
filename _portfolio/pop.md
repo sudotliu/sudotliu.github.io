@@ -28,19 +28,21 @@ gallery:
 
 {% include gallery caption="iOS App Store previews for POP" %}
 
-The year was 2015. While maintaining our full-time day jobs, an old friend and I embarked on our
-first startup adventure, a move that profoundly shaped my engineering career. At that time, while
-enhancing my backend skills at work, I was also keen to explore the rest of the tech stack, and this
-project proved to be the perfect catalyst. Although I was already familiar with HTML, CSS, and
-JavaScript from creating static websites in school, I still had much to learn about integrating
-these technologies with a backend effectively. It's strange to think about now, but learning jQuery
-was near the top of my to-do list back then.
+The year was 2015. While maintaining our full-time day jobs, an old friend,
+<a href="https://www.linkedin.com/in/jgarg/" target="_blank">Jay Garg</a>,
+and I embarked on our first startup adventure, a move that profoundly shaped my
+engineering career. At that time, while enhancing my backend skills at
+work, I was also keen to explore the rest of the tech stack, and this project proved to be the
+perfect catalyst. Although I was already familiar with HTML, CSS, and JavaScript from creating
+static websites in school, I still had much to learn about integrating these technologies with a
+backend effectively. It's strange to think about now, but learning jQuery was near the top of my
+to-do list back then.
 
-The idea was to build a social network that focused on polls as the main format of content and
-means of communication. While we considered how we might make a business of it down the road, we
-were primarily focused on learning and building something fun and engaging. It wasn't long at all
-before I was crossing off "learn jQuery" from my to-do list as we got to work building our initial
-prototype.
+We met for coffee and Jay pitched me on the idea of building a social network that focused on polls
+as the main format of content and means of communication. While we considered how we might make a
+business of it down the road, we were primarily focused on learning and building something fun and
+engaging. It wasn't long at all before I was crossing all sorts of things off from my learning to-do
+list as we got to work building our initial prototype.
 
 We knew that it was going to be a much better fit as a mobile application in the long term but we
 could launch it to the web much faster given our skills at the time. We built the prototype on AWS
@@ -55,7 +57,7 @@ we reached an inflection point in early 2016 when we decided to rebuild everythi
 for several reasons:
 - We had a more clearly-defined MVP and were ready to push past prototyping
 - Managing media queries to support both desktop and mobile web views had become taxing
-- React was growing in popularity and I bet on it becoming a leading frontend technology
+- React was growing in popularity and we bet on it becoming a leading frontend technology
 - React Native gave us a way to produce two native apps with one unified codebase
 - User interviews suggested that a native mobile app was far more important than having a desktop
   experience at all
@@ -68,14 +70,14 @@ given React's monumental rise to popularity in the years that followed.
 
 ![Mandalorian this is the way image](/assets/images/pop/way.jpg){: .align-center}
 
-While we were initially rebuilding for feature parity with the web application, my cofounder came up
-with a really brilliant product change to allow user submission of an optional URL along with their
-poll. Suddenly, what was previously a very plain text post of a question and answers now had the
-ability to become a rich view of metadata regarding a news piece or article that the poll could be
-based on. We learned countless things on this journey but one of the most surprising was still the
-concept of the <a href="https://ogp.me/" target="_blank">Open Graph protocol</a>, which is largely
-what made this new idea feasible. We leveraged that to extract the metadata we needed to render a
-much more lively view of content alongside each poll that offered it.
+While we were initially rebuilding for feature parity with the web application, Jay came up with a
+really brilliant product change to allow user submission of an optional URL along with their poll.
+Suddenly, what was previously a very plain text post of a question and answers now had the ability
+to become a rich view of metadata regarding a news piece or article that the poll could be based on.
+We learned countless things on this journey but one of the most surprising was still the concept of
+the <a href="https://ogp.me/" target="_blank">Open Graph protocol</a>, which is largely what made
+this new idea feasible. We leveraged that to extract the metadata we needed to render a much more
+lively view of content alongside each poll that offered it.
 
 Our new main codebase was a React Native application but this time we decided to use Firebase as our
 primary datastore as it also simplified things like user account management and authentication flow.
@@ -100,7 +102,8 @@ like friend requests, new poll submissions, etc.
       <br/><br/>
       One of the main downsides of being so early to use React Native was that we were somewhat
       limited in our ability to express more complex UX based on what React Native libraries were 
-      available. One such challenge came up when we were trying to render the poll results as something like a pie chart, and we ended up repurposing a circular progress bar component to accomplish this.
+      available. One such challenge came up when we were trying to render the poll results as something like a pie chart,
+      and we ended up repurposing a circular progress bar component to accomplish this.
       Shout out to
       <a href="https://www.npmjs.com/package/react-native-circular-progress" target="_blank">
         react-native-circular-progress
@@ -113,10 +116,13 @@ like friend requests, new poll submissions, etc.
   <div style="flex: 2;">
     <p>
       One of our goals from the very beginning was to have a social element and here is an example
-      of how we ended up delivering that. The idea was to compare poll results with friends, and this feature was one of my favorite to "dog-food" because it sparked fun debates whenever my cofounder
-      and I learned something we didn't know about each other before.
+      of how we ended up delivering that. The idea was to compare poll results with friends, and this feature was one of
+      my favorite to "dog-food" because it often sparked fun debates whenever folks learned something new about each other.
       <br/><br/>
-      This was clearly also around the time we took our UI design skills to a whole new level. I remember thinking there was something magical about the simplicity of our positive / negative sentiment face indicators in these comparisons. As I recall, my cofounder created the negative face (of utter shock and dismay) by literally just flipping the smile upside down – talk about efficient design!
+      This was clearly also around the time we took our UI design skills to a whole new level.
+      I remember thinking there was something magical about the simplicity of our positive / negative sentiment face
+      indicators in these comparisons. As I recall, Jay created the negative face (of utter shock and dismay) by
+      literally just flipping the smile upside down – talk about efficient design!
     </p>
   </div>
   <div style="flex: 2; padding-left: 20px;">
@@ -179,8 +185,8 @@ within a month of starting on it. The biggest obstacles were the differences in 
 routing mechanisms, which did take quite a while to reconcile generically but there was nearly no
 other platform-specific work needed beyond that.
 
-In the end, the hardest lessons learned had much less to do with "how" to build it and much more to
-do with "why" and "for whom", but those can be topics for another post about startups in general. We
+In the end, the hardest lessons learned had less to do with "how" to build it and more to do with
+"why" and "for whom", but those can be topics for another post about startups in general. We
 did successfully publish the app to both stores and maintain it for some time, but we ultimately did
 not see enough meaningful engagement and decided to shutter the project in 2019. Despite that, I
 will never regret a single late night or busy weekend spent on this maiden voyage, because the true

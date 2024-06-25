@@ -68,11 +68,11 @@ reservoir. This felt no different to the player, as the perception of what was h
 virtually the same, and yet it drastically reduced the number of water "particle" interactions,
 allowing our game to run incredibly smoothly. This major breakthrough actually helped in a number of
 other ways as well; it sped up the testing process since the app would no longer stall in
-performance but it also simplified state management and win condition logic. 
+performance and it also simplified things like state management and win condition logic. 
 
 [![Gameplay screenshot](/assets/images/cs470/gameplay_screen.png)](/assets/images/cs470/gameplay_screen.png)
 
-The second breakthrough came as we got into more advanced level design. To increase the level of
+The second breakthrough came as we got into more advanced level design. To increase the degree of
 challenge and make use of more screen real estate, we had to introduce turns in the water pipes. Up
 to that point we had only experimented with straight lines as physical boundaries for the water to
 travel along and that was as simple as drawing a line with some coordinates:
@@ -80,7 +80,7 @@ travel along and that was as simple as drawing a line with some coordinates:
 function PhysicsLineFactoryII:makePhysicsLine(x0,y0,x1,y1,tag)
 ```
 
-Drawing straight vertical and horizontal pipes with a given width and height was also easy:
+That meant drawing vertical and horizontal pipes with a given width and height was also easy:
 ```lua
 function PhysicsLineFactoryII:makeHorizPipeLine(x,y,w,h,tag)
   self:makePhysicsLine(x,y,x+w,y,tag);
@@ -93,7 +93,7 @@ function PhysicsLineFactoryII:makeVertPipeLine(x,y,w,h,tag)
 end;
 ```
 
-T-shaped pipes that merged horizontal and vertical pipes were a little trickier and also required an
+T-shaped pipes that intersected horizontal and vertical pipes were a little trickier and also required an
 orientation specification. I used compass directions at the time although in hindsight, perhaps
 "top", "bottom", "left", "right" might have been more sensible:
 ```lua
