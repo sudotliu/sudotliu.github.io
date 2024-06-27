@@ -9,7 +9,7 @@ header:
     image: /assets/images/splash.png
 ---
 
-Welcome to my blog that will mostly be focused on technology, especially code.
+Welcome to my blog that will mostly be focused on code.
 
 I am a simple guy with deep fondness for technology. I've always been driven by a
 desire to discover how things work, and that inquisitive nature will probably never be fully
