@@ -11,7 +11,9 @@ header:
 
 Welcome to my blog that will mostly be focused on code.
 
-I am a simple guy with deep fondness for technology. I've always been driven by a
+## About me
+
+I am a simple guy with a strong passion for technology. I've always been driven by a
 desire to discover how things work, and that inquisitive nature will probably never be fully
 satisfied. It took me some time to find my niche among the various fields and career paths that
 piqued my interest, and although I started as a mechanical engineering major, I didn't find true
@@ -22,3 +24,18 @@ Despite the many frustrations and long nights, my enthusiasm for code remains as
 ran my first "Hello, World!" program. Finding my calling has been invigorating, and I realize that I
 have the potential to significantly impact how people live, right at my fingertips. Given this, I am
 proud to be a techie who aims to make the world a better place, cliché as it may sound.
+
+## About this site
+
+You can find all of my contact information on the left, and there are two main sections of content
+otherwise:
+- "Blog" with thoughts on various tech or code things
+- "Portfolio" showcasing some of my favorite projects
+
+The site logo is a 3D graphic of my initials (TL) that is heavily based on the logo of the [San Jose
+Tech Museum](https://www.thetech.org/), where I have fond memories of my mom taking me on weekends growing up.
+
+<div style="text-align: center;">
+  <img src="/assets/images/ico/large.png" alt="3D graphic of initials TL"
+    style="max-width: 200px; height: auto;">
+</div>
