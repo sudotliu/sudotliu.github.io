@@ -66,19 +66,13 @@ Despite not having much of a lead at the time, we made the hard decision to focu
 how ***we*** would solve it if forced, so we revisited our problem with fresh eyes. It's amazing
 sometimes what you find or what you become capable of when there are no other options. I couldn't
 believe it when I found this paper called <a href="https://www.cs.unc.edu/techreports/89-034.pdf"
-target="_blank"> A Node-Positioning Algorithm for General Trees</a> written by John Q. Walker II. As
+target="_blank">A Node-Positioning Algorithm for General Trees</a> written by John Q. Walker II. As
 you can probably tell from the title, it was exactly what we needed (at least on paper), and all I
 had to do was adapt our own algorithm from it – easier said than done.
 
-It took some time but I did successfully adapt the algorithm for our purposes, and that was
-ultimately what powered our ability to re-shape our trees automatically. Here it is in action:
-<br/><br/>**TODO: insert large GIF demo of tree positioning**
-
-<!--
-The core logic behind this node positioning algorithm has since been licensed as open source and it
-proudly carries the name of this original web application project forward with it.
-Check it out at [Bonsai](https://github.com/sudotliu/bonsai).
--->
+It took several nights of hard work but I did successfully adapt the algorithm for our
+purposes, and that was ultimately what powered our ability to re-shape our trees automatically. Here
+it is in action: <br/><br/>**TODO: insert large GIF demo of tree positioning**
 
 SVG Paths were what enabled us to draw precise lines connecting the tree nodes once they were
 positioned. Looking back now, I'm quite surprised that all of the line-drawing code is less than 200
@@ -93,26 +87,28 @@ The rest of the tech stack was fairly simple as our main goal was to launch a pr
 Once we had the rendering and repositioning working, we quickly added in other features like the
 ability to set a mathematical operator for a parent node so that it knew how to auto-calculate its
 own value by applying that operator on the values of its children. It was around this time that I
-was reminded of the perils of floating point arithmetic, and while it wasn't the first time I had
-come across the concept, the lesson was certainly ingrained in me this time. For the uninitiated,
-the problem of doing floating point arithmetic can be summarized by trying this in a Python shell
-(or almost any other language for that matter):
-```python
->>> 1.3 + 0.1
-1.4000000000000001
-```
-There are many resources that go into great detail about why this happens, so suffice it to say here
-that the "floating point" type is imprecise due to the nature of how the number is stored in
-computing. When doing any precise math, you should be using a proper "Decimal" type to address this,
-and every language should have one either natively or as a package.
+was reminded of the perils of <a href="{% post_url 2024-07-01-floating-point-arithmetic %}"
+target="_blank"> floating point arithmetic</a>.
 
 We finally had our "metric tree" tool and it seemed like it could be generalized for a variety of
 uses. Here is a slightly more complex example that shows how a metric tree might be used to model
-annual recurring revenue (ARR) for a product:
+annual recurring revenue (ARR) for a product with different tiers of subscription:
 
 [![Bonsai metric tree ARR example](/assets/images/bonsai/arr_example.png)](/assets/images/bonsai/arr_example.png)
 
+In the end, we didn't garner enough attention or see enough usage from any end-user candidates to
+suggest that it was worth pursuing, but it was clear that we were learning from our earlier
+mistakes. While it took us years to recognize a failure to launch the first time, it only took us
+months with this project. We also built something much less broad but in many ways far more complex
+and unique than what we had built before, which was a good place to be for prototyping.
+
+<!--
+With permission from John Q. Walker II, whose foundational work made this project possible, I have
+since published the core logic behind our tree positioning package as open source under a very
+permissive license. It will proudly carry the name of this original project forward with it, and you
+can check it out at <a href="https://github.com/sudotliu/bonsai" target="_blank">Bonsai</a>.
 
 # TODOs
 - open source code, pending response from UNC re: license
-    - update README and post based on response
+    - update repo README with blog post link
+-->
