@@ -9,4 +9,4 @@ classes: wide
 
 Here is a simple list of my blog posts.
 <br/>
-Perhaps once I have enough to warrant it, I will organize them by year.
+Perhaps once I have enough to warrant it, I will organize them by year, category, etc.

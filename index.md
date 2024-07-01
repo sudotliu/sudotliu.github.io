@@ -32,8 +32,9 @@ otherwise:
 - "Blog" with thoughts on various tech or code things
 - "Portfolio" showcasing some of my favorite projects
 
-The site logo is a 3D graphic of my initials (TL) that is heavily based on the logo of the [San Jose
-Tech Museum](https://www.thetech.org/), where I have fond memories of my mom taking me on weekends growing up.
+The site logo is a 3D graphic of my initials (TL) that is heavily based on the logo of the <a
+href="https://www.thetech.org/" target="_blank">San Jose Tech Museum</a>, where I have fond memories
+of visiting during my childhood thanks to my parents.
 
 <div style="text-align: center;">
   <img src="/assets/images/ico/large.png" alt="3D graphic of initials TL"
