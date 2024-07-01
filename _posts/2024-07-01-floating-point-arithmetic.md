@@ -22,7 +22,8 @@ When doing any precise math (e.g. financial applications), you should be using a
 type to address this, and every respectable language should have one, either natively or as a
 package.
 
-For example, in Python:
+Note that for Python, the input to `Decimal()` should be a **string**, which is its own gotcha
+🤦🏻‍♂️:
 ```python
 >>> from decimal import Decimal
 >>> Decimal('1.3') + Decimal('0.1')
