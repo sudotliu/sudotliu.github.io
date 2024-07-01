@@ -3,3 +3,6 @@ serve:
 
 serve_published:
 	bundle exec jekyll serve --livereload
+
+post:
+	bundle exec jekyll post "$(name)"
