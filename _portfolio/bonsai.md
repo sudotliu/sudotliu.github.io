@@ -1,7 +1,6 @@
 ---
 title: "Bonsai Metric Tree"
 order: 3
-published: false
 excerpt: "[2020] Side project with a mission to create a SaaS tool for improved project planning and metric roll-ups"
 classes: wide
 header:
