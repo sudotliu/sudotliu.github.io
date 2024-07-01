@@ -39,31 +39,31 @@ node 1 by 10% and node 2 by 5% and a project "B" that affects node 3 by 20%. If 
 choose one project to do between the two of them, being able to see the final outcome for either
 project would make for a quick comparison and decision. Of course, all of this is assuming that your
 baseline estimates and percentages of impact are correct in the first place, which becomes the new
-challenge. As tough as those details are to get right, we found that better than sticking a wet
-finger in the air and saying "the wind is blowing this way".
+challenge. As tough as those details are to get right, we found it preferable to sticking a wet
+finger in the air and saying, "I think the wind is blowing this way..."
 
-Here is what the product ended up looking like:
+Here is what the prototype ended up looking like:
 [![Bonsai metric tree simple example](/assets/images/bonsai/ex_tree.png)](/assets/images/bonsai/ex_tree.png)
 
-As we got to exploring how we could build such a thing, it quickly became clear where the major
+As we began exploring how we could build such a thing, it quickly became clear where the major
 obstacles would be. Spoiler alert: the tree (duh). The nodes were going to be relatively simple
-(React) components. We determined that we could have a single node be considered "active" at any
-time and have that node's configuration open for editing in the side panel. Simple enough. We soon
+React components. We determined that we could have a single node be considered "active" at any time
+and have that node's configuration open for editing in the side panel. Simple enough. We soon
 realized, however, that we didn't have the slightest clue about how to render a tree of said nodes,
-never mind dynamically re-shaping all of it on the fly. "Re-shaping" here means automatic node
-repositioning, and it was critical to us as we didn't see much use in a tool that required you to
-manually reposition nodes each time you made a change that disrupted the balance or visual spacing
-of the tree.
+never mind dynamically reshaping all of it on the fly. By "reshaping", we mean automatically
+repositioning all the nodes of the tree. This was critical for us, as we saw little value in a tool that
+would require manual repositioning each time a change disrupted the balance or visual spacing of the
+tree.
 
-We had scoured the web at the time for a pre-made solution that would get us at least partway there
-as we knew it wasn't going to be trivial to build, but nothing really fit what we needed. The
-closest we got were some solutions that provided a dynamic tree with extremely limited ability to
+We had scoured the web at the time for a pre-made solution that would get us at least partway there,
+because we knew it wasn't going to be trivial to build. Nothing really fit what we needed though.
+The closest we got were solutions that provided a dynamic tree with extremely limited ability to
 adapt what was in each node. As tempting as those solutions were at first, early testing convinced
 me that trying to repurpose them for our use-case was going to be even more frustrating and
 time-consuming than figuring out how to build our own in the long run.
 
-Despite not having much of a lead at the time, we made the hard decision to focus intently back on
-how ***we*** would solve it if forced, so we revisited our problem with fresh eyes. It's amazing
+Despite not having any leads at the time, we made the hard decision to focus intently back on
+how ***we*** would solve it if forced, and we revisited our problem with fresh eyes. It's amazing
 sometimes what you find or what you become capable of when there are no other options. I couldn't
 believe it when I found this paper called <a href="https://www.cs.unc.edu/techreports/89-034.pdf"
 target="_blank">A Node-Positioning Algorithm for General Trees</a> written by John Q. Walker II. As
@@ -71,36 +71,37 @@ you can probably tell from the title, it was exactly what we needed (at least on
 had to do was adapt our own algorithm from it – easier said than done.
 
 It took several nights of hard work but I did successfully adapt the algorithm for our
-purposes, and that was ultimately what powered our ability to re-shape our trees automatically. Here
-it is in action: <br/><br/>**TODO: insert large GIF demo of tree positioning**
+purposes, and that was ultimately what powered our ability to reshape our trees automatically. Here
+it is in action:
+
+[![Tree positioning demo GIF](/assets/images/bonsai/tree_pos.gif)](/assets/images/bonsai/tree_pos.gif)
 
 SVG Paths were what enabled us to draw precise lines connecting the tree nodes once they were
-positioned. Looking back now, I'm quite surprised that all of the line-drawing code is less than 200
-tidy lines, including two React components' worth of boilerplate. Most of it is some light math
-wrapped around the `svg` and `path` elements. The hardest part here was probably realizing what was
-even possible with HTML and SVG in the first place: as it turns out, quite a bit! Enabling the
-rounded corners for paths leading to edge nodes was the final cherry on top.
+positioned. Looking back now, I'm a little surprised that all of the line-drawing is handled by less
+than 200 tidy lines of code (including two React components' worth of boilerplate). Then again, it
+was mostly just lightweight math wrapped around the `svg` and `path` elements. The real test here
+was learning what was even possible with HTML and SVG in the first place: as it turns out, quite a
+bit! Enabling the rounded corners for paths leading to edge nodes was the final cherry on top.
 
-The rest of the tech stack was fairly simple as our main goal was to launch a proof of concept:
-<br/>Django, Python, React, Docker, GCP
-
-Once we had the rendering and repositioning working, we quickly added in other features like the
-ability to set a mathematical operator for a parent node so that it knew how to auto-calculate its
-own value by applying that operator on the values of its children. It was around this time that I
-was reminded of the perils of <a href="{% post_url 2024-07-01-floating-point-arithmetic %}"
-target="_blank"> floating point arithmetic</a>.
+The rest of the tech stack was kept fairly simple as our main goal was to launch a proof of concept,
+so we used Django, Python, React, Docker, and GCP. Once we had the rendering and repositioning
+working, we quickly added in other features like the ability to set a mathematical operator for a
+parent node so that it knew how to auto-calculate its own value by applying that operator on the
+values of its children. It was around this time that I was reminded of the perils of <a href="{%
+post_url 2024-07-01-floating-point-arithmetic %}" target="_blank"> floating point arithmetic</a>.
 
 We finally had our "metric tree" tool and it seemed like it could be generalized for a variety of
-uses. Here is a slightly more complex example that shows how a metric tree might be used to model
-annual recurring revenue (ARR) for a product with different tiers of subscription:
+uses so we shared it around. Here is a slightly more complex example showing how it might have been
+used to model annual recurring revenue (ARR) for a product with different subscription tiers:
 
 [![Bonsai metric tree ARR example](/assets/images/bonsai/arr_example.png)](/assets/images/bonsai/arr_example.png)
 
 In the end, we didn't garner enough attention or see enough usage from any end-user candidates to
 suggest that it was worth pursuing, but it was clear that we were learning from our earlier
-mistakes. While it took us years to recognize a failure to launch the first time, it only took us
-months with this project. We also built something much less broad but in many ways far more complex
-and unique than what we had built before, which was a good place to be for prototyping.
+mistakes. While it took us years to recognize a failure to launch previously, it took us only months
+to both build and draw similar conclusions with this project. In that time, we had also built
+something much less broad but in many ways far more complex and unique than what we had built
+before, which was a good place to be for prototyping.
 
 <!--
 With permission from John Q. Walker II, whose foundational work made this project possible, I have
@@ -110,5 +111,5 @@ can check it out at <a href="https://github.com/sudotliu/bonsai" target="_blank"
 
 # TODOs
 - open source code, pending response from UNC re: license
-    - update repo README with blog post link
+- update Bonsai repo README with blog post link
 -->
