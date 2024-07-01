@@ -2,7 +2,6 @@
 layout: single
 title:  "New blog, who dis?"
 date:   2024-06-23 09:30:00 -0700
-categories: blog
 ---
 
 I technically started this blog many years ago but never made the time to post meaningful content.

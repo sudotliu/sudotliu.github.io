@@ -2,7 +2,6 @@
 layout: single 
 title: Floating Point Arithmetic
 date: 2024-07-01 01:11 -0700
-categories: blog
 ---
 
 I've come across this numerous times in my career thus far and have the lesson ingrained in me, but

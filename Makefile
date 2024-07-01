@@ -4,5 +4,5 @@ serve:
 serve_published:
 	bundle exec jekyll serve --livereload
 
-post:
-	bundle exec jekyll post "$(name)"
+blog:
+	bundle exec jekyll compose "$(name)" --layout single --collection posts
