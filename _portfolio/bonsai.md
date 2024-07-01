@@ -45,20 +45,74 @@ finger in the air and saying "the wind is blowing this way".
 Here is what the product ended up looking like:
 [![Bonsai metric tree simple example](/assets/images/bonsai/ex_tree.png)](/assets/images/bonsai/ex_tree.png)
 
+As we got to exploring how we could build such a thing, it quickly became clear where the major
+obstacles would be. Spoiler alert: the tree (duh). The nodes were going to be relatively simple
+(React) components. We determined that we could have a single node be considered "active" at any
+time and have that node's configuration open for editing in the side panel. Simple enough. We soon
+realized, however, that we didn't have the slightest clue about how to render a tree of said nodes,
+never mind dynamically re-shaping all of it on the fly. "Re-shaping" here means automatic node
+repositioning, and it was critical to us as we didn't see much use in a tool that required you to
+manually reposition nodes each time you made a change that disrupted the balance or visual spacing
+of the tree.
 
-- bonsai
-    - Conda, Django, Python, React, Docker, AWS, GCP
+We had scoured the web at the time for a pre-made solution that would get us at least partway there
+as we knew it wasn't going to be trivial to build, but nothing really fit what we needed. The
+closest we got were some solutions that provided a dynamic tree with extremely limited ability to
+adapt what was in each node. As tempting as those solutions were at first, early testing convinced
+me that trying to repurpose them for our use-case was going to be even more frustrating and
+time-consuming than figuring out how to build our own in the long run.
 
-- walker_tree
-    - add python tests
-    - open source code - pending response from UNC re: license
-        - update README based on response
-    - create TS version and create open source org tree app?
-      - better yet, create something with algo embedded that allows open specification of what the React node looks like
+Despite not having much of a lead at the time, we made the hard decision to focus intently back on
+how ***we*** would solve it if forced, so we revisited our problem with fresh eyes. It's amazing
+sometimes what you find or what you become capable of when there are no other options. I couldn't
+believe it when I found this paper called <a href="https://www.cs.unc.edu/techreports/89-034.pdf"
+target="_blank"> A Node-Positioning Algorithm for General Trees</a> written by John Q. Walker II. As
+you can probably tell from the title, it was exactly what we needed (at least on paper), and all I
+had to do was adapt our own algorithm from it – easier said than done.
 
+It took some time but I did successfully adapt the algorithm for our purposes, and that was
+ultimately what powered our ability to re-shape our trees automatically. Here it is in action:
+<br/><br/>**TODO: insert large GIF demo of tree positioning**
 
-This quickly generalized into a solution that could roll up any kind of metric or render metadata
-for any kind of tree.
+<!--
+The core logic behind this node positioning algorithm has since been licensed as open source and it
+proudly carries the name of this original web application project forward with it.
+Check it out at [Bonsai](https://github.com/sudotliu/bonsai).
+-->
 
+SVG Paths were what enabled us to draw precise lines connecting the tree nodes once they were
+positioned. Looking back now, I'm quite surprised that all of the line-drawing code is less than 200
+tidy lines, including two React components' worth of boilerplate. Most of it is some light math
+wrapped around the `svg` and `path` elements. The hardest part here was probably realizing what was
+even possible with HTML and SVG in the first place: as it turns out, quite a bit! Enabling the
+rounded corners for paths leading to edge nodes was the final cherry on top.
+
+The rest of the tech stack was fairly simple as our main goal was to launch a proof of concept:
+<br/>Django, Python, React, Docker, GCP
+
+Once we had the rendering and repositioning working, we quickly added in other features like the
+ability to set a mathematical operator for a parent node so that it knew how to auto-calculate its
+own value by applying that operator on the values of its children. It was around this time that I
+was reminded of the perils of floating point arithmetic, and while it wasn't the first time I had
+come across the concept, the lesson was certainly ingrained in me this time. For the uninitiated,
+the problem of doing floating point arithmetic can be summarized by trying this in a Python shell
+(or almost any other language for that matter):
+```python
+>>> 1.3 + 0.1
+1.4000000000000001
+```
+There are many resources that go into great detail about why this happens, so suffice it to say here
+that the "floating point" type is imprecise due to the nature of how the number is stored in
+computing. When doing any precise math, you should be using a proper "Decimal" type to address this,
+and every language should have one either natively or as a package.
+
+We finally had our "metric tree" tool and it seemed like it could be generalized for a variety of
+uses. Here is a slightly more complex example that shows how a metric tree might be used to model
+annual recurring revenue (ARR) for a product:
 
 [![Bonsai metric tree ARR example](/assets/images/bonsai/arr_example.png)](/assets/images/bonsai/arr_example.png)
+
+
+# TODOs
+- open source code, pending response from UNC re: license
+    - update README and post based on response
