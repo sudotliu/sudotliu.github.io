@@ -1,6 +1,7 @@
 ---
 title: "Aqueduct Adventures"
 order: 1
+date:   2024-06-24 20:23:00 -0700
 excerpt: "[2013] Mobile game produced for a university computer science class project."
 classes: wide
 header:

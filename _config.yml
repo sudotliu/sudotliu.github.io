@@ -27,6 +27,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://terryliu.com" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
+timezone: America/Los_Angeles
 remote_theme: "mmistakes/minimal-mistakes@4.26.1"
 plugins:
   - jekyll-feed

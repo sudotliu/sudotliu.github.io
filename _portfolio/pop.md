@@ -1,6 +1,7 @@
 ---
 title: "Popular Opinion Polling (POP)"
 order: 2
+date:   2024-06-24 20:28:00 -0700
 excerpt: "[2015-2019] Side venture startup with a mission to socialize polls as a way for people to learn more about their friends and popular opinion"
 classes: wide
 header:

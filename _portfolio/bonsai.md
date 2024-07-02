@@ -1,6 +1,7 @@
 ---
 title: "Bonsai Metric Tree"
 order: 3
+date:   2024-07-01 13:35:00 -0700
 excerpt: "[2020] Side project with a mission to create a SaaS tool for improved project planning and metric roll-ups"
 classes: wide
 header:
