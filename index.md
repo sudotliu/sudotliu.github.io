@@ -3,11 +3,13 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
-title: "Hello, World!"
+title: "Musings on 1s and 0s"
 author_profile: true
 header:
     image: /assets/images/splash.png
 ---
+
+## Hello, World!
 
 Welcome to my blog that will mostly be focused on code.
 
