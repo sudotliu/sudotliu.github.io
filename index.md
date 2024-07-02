@@ -27,18 +27,22 @@ ran my first "Hello, World!" program. Finding my calling has been invigorating, 
 have the potential to significantly impact how people live, right at my fingertips. Given this, I am
 proud to be a techie who aims to make the world a better place, cliché as it may sound.
 
-## About this site
+## About the site
 
-You can find all of my contact information on the left, and there are two main sections of content
-otherwise:
-- "Blog" with thoughts on various tech or code things
-- "Portfolio" showcasing some of my favorite projects
+⬅️ You can find all of my contact information on the left or by pressing the **Follow** button up
+top to open a menu of it on mobile.
 
-The site logo is a 3D graphic of my initials (TL) that is heavily based on the logo of the <a
-href="https://www.thetech.org/" target="_blank">San Jose Tech Museum</a>, where I have fond memories
-of visiting during my childhood thanks to my parents.
+There are two main sections of content:
+- [Blog](/blog/) exploring thoughts on technology and coding
+- [Portfolio](/portfolio/) showcasing my favorite non-proprietary projects
 
+## About the logo
+
+The site logo is a 3D graphic of my initials (TL) and is heavily based on the logo of the <a
+href="https://www.thetech.org/" target="_blank">San Jose Tech Museum</a>, a place I have very fond
+memories of visiting in my childhood, thanks to my parents.
 <div style="text-align: center;">
   <img src="/assets/images/ico/large.png" alt="3D graphic of initials TL"
     style="max-width: 200px; height: auto;">
 </div>
+
