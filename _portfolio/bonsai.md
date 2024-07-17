@@ -103,13 +103,8 @@ to both build and draw similar conclusions with this project. In that time, we h
 something much less broad but in many ways far more complex and unique than what we had built
 before, which was a good place to be for prototyping.
 
-<!--
-With permission from John Q. Walker II, whose foundational work made this project possible, I have
-since published the core logic behind our tree positioning package as open source under a very
-permissive license. It will proudly carry the name of this original project forward with it, and you
-can check it out at <a href="https://github.com/sudotliu/bonsai" target="_blank">Bonsai</a>.
-
-# TODOs
-- open source code, pending response from UNC re: license
-- update Bonsai repo README with blog post link
--->
+I am currently seeking approval from the copyright owner(s) to apply an MIT license to this work
+such that it can be used freely. Regardless, the source code for the core logic behind our tree
+positioning package has since been made public on GitHub, and it will proudly carry the name of this
+original project forward. You can check it out at
+<a href="https://github.com/sudotliu/bonsai" target="_blank">Bonsai</a>!
