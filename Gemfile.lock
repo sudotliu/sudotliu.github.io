@@ -253,7 +253,6 @@ GEM
       faraday (>= 0.17.3, < 3)
     simpleidn (0.2.2)
       unf (~> 0.1.4)
-    strscan (3.1.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     typhoeus (1.4.1)
@@ -269,6 +268,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-darwin-23
   x86_64-linux
 
 DEPENDENCIES
