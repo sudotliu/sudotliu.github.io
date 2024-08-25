@@ -36,7 +36,7 @@ engineering career. At that time, while enhancing my backend skills at
 work, I was also keen to explore the rest of the tech stack, and this project proved to be the
 perfect catalyst. Although I was already familiar with HTML, CSS, and JavaScript from creating
 static websites in school, I still had much to learn about integrating these technologies with a
-backend effectively. It's strange to think about now, but learning jQuery was near the top of my
+backend effectively. It's strange to think about now, but learning AJAX and jQuery were near the top of my
 to-do list back then.
 
 We met for coffee and Jay pitched me on the idea of building a social network that focused on polls
@@ -192,4 +192,4 @@ did successfully publish the app to both stores and maintain it for some time, b
 not see enough meaningful engagement and decided to shutter the project in 2019. Despite that, I
 will never regret a single late night or busy weekend spent on this maiden voyage, because the true
 value we built has stayed with us to this day as knowledge gained and bonds formed. Besides, I think
-we did okay for something that basically started as a reason to learn jQuery.
+we did okay for something that basically started as a means to learn more.
